@@ -62,12 +62,16 @@
   <article data-timings="">
     <p>To calculate BMI, the following formula which requires weight and height of the subject as an input is used: </p>
 
-<pre><code>                           BMI = weight(kg) / height(m)2
-</code></pre>
+<pre><code class="r">bmi &lt;- function(mass, height, units) {
+        bmi = mass / height^2
 
-<p><br>
-Example: 
-Height of 170cm and weight of 60kg, gives BMI value of 20.76, which is normal healthy weight</p>
+        if (units == IMPERIAL) {
+                bmi = bmi * 703
+        }
+
+        return (bmi)
+}
+</code></pre>
 
   </article>
   <!-- Presenter Notes -->
