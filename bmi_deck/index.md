@@ -25,10 +25,17 @@ knit        : slidify::knit2slides
 To calculate BMI, the following formula which requires weight and height of the subject as an input is used: 
 
 
-                               BMI = weight(kg) / height(m)2
-<br>
-Example: 
-Height of 170cm and weight of 60kg, gives BMI value of 20.76, which is normal healthy weight
+```r
+bmi <- function(mass, height, units) {
+        bmi = mass / height^2
+        
+        if (units == IMPERIAL) {
+                bmi = bmi * 703
+        }
+        
+        return (bmi)
+}
+```
 
 
 --- .class #id 
